@@ -32,6 +32,12 @@ jobs:
       - name: Sync web assets
         run: npx cap sync android
 
+      - name: Add exact alarm permissions
+        run: |
+          MANIFEST=android/app/src/main/AndroidManifest.xml
+          sed -i 's#</manifest>#    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />\n    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />\n</manifest>#' "$MANIFEST"
+          cat "$MANIFEST"
+
       - name: Build debug APK
         run: |
           cd android

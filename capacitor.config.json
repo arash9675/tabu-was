@@ -1,0 +1,9 @@
+{
+  "appId": "com.tabuwash.app",
+  "appName": "Tabu Wash",
+  "webDir": "www",
+  "server": {
+    "url": "https://laundry.qd.je/dashboard.html",
+    "cleartext": false
+  }
+}
